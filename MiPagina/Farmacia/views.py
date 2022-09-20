@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Farmacia.models import Medicamento
+from Farmacia.models import *
 from django.http import HttpResponse
 
 #from Farmacia.forms import form_medicamento
@@ -20,6 +20,31 @@ def medicamentos(request):
         medic.save()
         return render(request, "inicio.html")
     return render(request, "medicamentos.html") 
+
+
+def laboratorios(request):
+    if request.method == "POST":
+        medic = Laboratorio(
+            nombreLab= request.POST["nombreLaboratorio"],
+            direccion= request.POST["direccion"], 
+            telefonoLab= request.POST["telefono"],  
+            )
+        medic.save()
+        return render(request, "inicio.html")
+    return render(request, "laboratorios.html") 
+
+def sucursales(request):
+    if request.method == "POST":
+        medic = Medicamento(
+            nombreSucursal = request.POST["nombreSucursal"],
+            direccionSucursal = request.POST["direccionSucursal"], 
+            municipioSucursal = request.POST["municipioSucursal"],  
+            ciudadSucursal = request.POST["ciudadSucursal"],
+            telefonoSucursal = request.POST["telefonoSucursal"],
+            )
+        medic.save()
+        return render(request, "inicio.html")
+    return render(request, "sucursales.html") 
 
 #def api_medicamento(request):
 #    if request.method == "POST":
@@ -42,7 +67,7 @@ def buscar_medicamento(request):
     if request.GET["nombreMedicamento"]:
         nombre= request.GET["nombreMedicamento"]
         medicamentos= Medicamento.objects.filter(nombreMarca__icontains = nombre )
-        return render(request, "signup.html", {"medicamentos": medicamentos})
+        return render(request, "medicamentos.html", {"medicamentos": medicamentos})
     else:
         respuesta= "No enviaste datos"
     return HttpResponse(respuesta)

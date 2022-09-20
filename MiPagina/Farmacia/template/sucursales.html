@@ -13,8 +13,30 @@
 
 {% block header1 %}
 
-<body>
-    Aca van las sucursales
-</body>
+<form action="/sucursales/" method="POST"> {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal">Ingrese los datos de la sucursal</h1>
+    <div class="form-floating">
+        <input type="text" name="nombreSucursal" class="form-control"  placeholder=" " >
+            <label for="floatingInput">Nombre de la Sucursal</label>
+    </div>
+    <div class="form-floating">
+        <input type="text" name= "direccionSucursal"class="form-control" placeholder=" ">
+            <label for="floatingPassword">Direccion</label>
+    </div>
+    <div class="form-floating">
+        <input type="text" name= "municipioSucursal"class="form-control" placeholder=" ">
+            <label for="floatingPassword">Municipio</label>
+    </div>
+    <div class="form-floating">
+        <input type="text" name= "ciudadSucursal"class="form-control" placeholder=" ">
+            <label for="floatingPassword">Ciudad</label>
+    </div>
+    <div class="form-floating">
+        <input type="text" name= "telefonoSucursal"class="form-control" placeholder=" ">
+            <label for="floatingPassword">Telefono</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Guardar</button>
+</form>
+
 {% endblock %}
 </html>

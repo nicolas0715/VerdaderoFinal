@@ -10,9 +10,16 @@ class Medicamento(models.Model):
 
 class Laboratorio(models.Model):
     nombreLab = models.CharField(max_length=30)
-    direccion = models.CharField(max_length=50)
+    direccionLab = models.CharField(max_length=50)
     telefonoLab = models.IntegerField()
 
 class Accion(models.Model):
     nombreAccion = models.CharField(max_length=30)
-    descripcion = models.CharField(max_length=80)
+    descripcionAccion = models.CharField(max_length=80) 
+
+class Sucursal(models.Model):
+    nombreSucursal = models.CharField(max_length=40)
+    direccionSucursal = models.CharField(max_length=50)
+    municipioSucursal = models.CharField(max_length=30)
+    ciudadSucursal = models.CharField(max_length=30)
+    telefonoSucursal = models.IntegerField()

@@ -14,31 +14,31 @@
 {% block header1 %}
 
 <link rel="stylesheet" href="{% static 'css/miestilo.min.css'%}">
-<body>
-    <div class="b-line">
-        <form action="/medicamentos/" method="POST"> {% csrf_token %}
-            <h1 class="h3 mb-3 fw-normal">Que medicamento desea agregar? </h1>
-            <div class="form-floating">
-                <input type="text" name="nombreMedicamento" class="form-control"  placeholder=" " >
-                    <label for="floatingInput">Nombre del medicamento</label>
-            </div>
-            <div class="form-floating">
-                <input type="text" name= "nombreLaboratorio"class="form-control" placeholder=" ">
-                    <label for="floatingPassword">Laboratorio</label>
-            </div>
-            <div class="form-floating">
-                <input type="text" name= "nombreDroga"class="form-control" placeholder=" ">
-                    <label for="floatingPassword">Drogra Componente</label>
-            </div>
-            <div class="form-floating">
-                <input type="number" name= "codigoBarra"class="form-control" placeholder=" ">
-                    <label for="floatingPassword">Codigo de Barras</label>
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Guardar</button>
-        </form>
-    </div>
+    <body>
+        <div class="b-line">
+            <form action="/medicamentos/" method="POST"> {% csrf_token %}
+                <h1 class="h3 mb-3 fw-normal">Que medicamento desea agregar? </h1>
+                <div class="form-floating">
+                    <input type="text" name="nombreMedicamento" class="form-control"  placeholder=" " >
+                        <label for="floatingInput">Nombre del medicamento</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name= "nombreLaboratorio"class="form-control" placeholder=" ">
+                        <label for="floatingPassword">Laboratorio</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name= "nombreDroga"class="form-control" placeholder=" ">
+                        <label for="floatingPassword">Drogra Componente</label>
+                </div>
+                <div class="form-floating">
+                    <input type="number" name= "codigoBarra"class="form-control" placeholder=" ">
+                        <label for="floatingPassword">Codigo de Barras</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Guardar</button>
+            </form>
+        </div> 
     <div class="v-line">
-        <form action="/medicamentos" method="GET"> 
+        <form action="/buscar_medicamento/" method="GET"> 
             <h1 class="h3 mb-3 fw-normal">Que medicamento desea buscar? </h1>
             <div class="form-floating">
                 <input type="text" name="nombreMedicamento" class="form-control"  placeholder=" " >
@@ -60,6 +60,6 @@
         </ul>
         {% endif %}
     </div>
-</body>
+    </body>
 </html>
 
