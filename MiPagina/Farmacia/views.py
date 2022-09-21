@@ -12,9 +12,9 @@ def laboratorios(request):
 def medicamentos(request):
     if request.method == "POST":
         medic = Medicamento(
-            nombreMarca= request.POST["nombreMedicamento"],
-            drogaComponente= request.POST["nombreDroga"], 
-            laboratorio= request.POST["nombreLaboratorio"],  
+            nombreMarca= request.POST["nombreMarca"],
+            drogaComponente= request.POST["drogaComponente"], 
+            laboratorio= request.POST["laboratorio"],  
             codigoBarra= request.POST["codigoBarra"]
             )
         medic.save()
@@ -64,8 +64,8 @@ def sucursales(request):
 #    return render(request, "api_medicamento.html", {"formulario": formulario})
 
 def buscar_medicamento(request):
-    if request.GET["nombreMedicamento"]:
-        nombre= request.GET["nombreMedicamento"]
+    if request.GET["nombreMarca"]:
+        nombre = request.GET["nombreMarca"]
         medicamentos= Medicamento.objects.filter(nombreMarca__icontains = nombre )
         return render(request, "medicamentos.html", {"medicamentos": medicamentos})
     else:

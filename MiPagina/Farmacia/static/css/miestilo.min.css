@@ -37,13 +37,12 @@
     height:80%;
     right: 55%;
     position: absolute;
+    text-align: center;
 }
 
-.recuadro {
-    height:80%;
-    left: 80%;
-    position: absolute;
-    text-align: center;
+.recuadro1{
+    position:absolute;
+    right :80%; 
 }
 
 
