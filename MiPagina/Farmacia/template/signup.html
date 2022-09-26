@@ -1,12 +1,23 @@
+{% extends "inicio.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Registrarse</title>
 </head>
+{% block header2 %}
+{% endblock %}
+{% block header3 %}
+{% endblock %}
+{% block header1 %}
 <body>
-    Aca ira el formulario para registrarse
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrarse</button>
+    </form>
 </body>
+{% endblock %}
 </html>

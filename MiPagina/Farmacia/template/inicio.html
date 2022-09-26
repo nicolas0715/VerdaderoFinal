@@ -20,47 +20,92 @@
                 <span class="fs-4" style="color:green">FarmaBarrio</span>
             </a>
             <ul class="nav nav-pills">
-                <li><a href="#" class="social-icon-button twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
 
-                <li><a href="#" class="social-icon-button facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
-                    
-                <li><a href="#" class="social-icon-button gplus"><i class="fa fa-google-plus" aria-hidden="true"></i></i><span></span></a></li>
+                <li class="nav-item">
+                    <a href="/signup" class="nav-link success" aria-current="page" style="margin:10px">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link success" aria-current="page" style="margin:10px">Iniciar Sesion</a>
+                </li>
+                {% block header3 %}
+                <li class="nav-item">
+                    <a href="/" class="nav-link success" aria-current="page" style="margin:10px">Salir</a>
+                </li>
+                {% endblock %}
 
-                <li class="nav-item"><a href="/" class="nav-link active" aria-current="page" style="margin:10px">Registrarse</a></li>
-                <li class="nav-item"><a href="/" class="nav-link active" aria-current="page" style="margin:10px">Iniciar Sesion</a></li>
             </ul>
         </header>
 
     </div>
-
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#"></a>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Inicio</a></li>
-                        <li class="nav-item"><a href="/medicamentos" class="nav-link">Medicamentos</a></li>
-                        <li class="nav-item"><a href="/laboratorios" class="nav-link">Laboratorios</a></li>
-                        <li class="nav-item"><a href="/sucursales" class="nav-link">Sucursales</a></li>
-                        <li class="nav-item"><a href="/ofertas" class="nav-link">Ofertas</a></li>
+    {% block header2 %}
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a href="/inicio" class="nav-link" aria-current="page">Inicio</a></li>
+                            <li class="nav-item"><a href="/medicamentos" class="nav-link">Medicamentos</a></li>
+                            <li class="nav-item"><a href="/laboratorios" class="nav-link">Laboratorios</a></li>
+                            <li class="nav-item"><a href="/sucursales" class="nav-link">Sucursales</a></li>
+                            <li class="nav-item"><a href="/ofertas" class="nav-link">Ofertas</a></li>
+                        </ul>
                     </ul>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    {% endblock %}
 </body>
 <div>
     {% block header1 %}
     <br> Aca iria el resto de la pagina
-</div>
     {% endblock %}
+</div>
+
+    
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+            </div>
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <li>
+                        <a href="#" class="social-icon-button twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a>
+                    </li>
+                </li>
+                <li class="ms-3">
+                    <li>
+                        <a href="#" class="social-icon-button facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a>
+                    </li>
+                </li>
+                <li class="ms-3">                       
+                    <li>
+                        <a href="#" class="social-icon-button gplus"><i class="fa fa-google-plus" aria-hidden="true"></i></i><span></span></a>
+                    </li>
+                <li class="ms-3">                       
+                    <li>
+                    <li>
+                        <div>
+                            <a href="#" class="social-icon-button"><i class="fa fa-user" aria-hidden="true"></i></i><span></span></a>
+                        </div>
+                        <div>
+                            <h6>AboutUs</h6>
+                        </div>
+                    </li>
+                </li>
+            </ul>
+        </footer>
+    </div>
 </html>
 
