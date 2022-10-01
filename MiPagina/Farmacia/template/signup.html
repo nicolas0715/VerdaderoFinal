@@ -1,4 +1,4 @@
-{% extends "inicio.html" %}
+{% extends "landingpage.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +13,7 @@
 {% endblock %}
 {% block header1 %}
 <body>
-    <form action="" method="POST">
-        {% csrf_token %}
+    <form action="" method="POST"> {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-success" style="margin-left:100px" style="margin-top:20px">Registrarse</button>
     </form>

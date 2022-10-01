@@ -1,25 +1,17 @@
 <!DOCTYPE html>
+{% extends "inicio.html" %}
+
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/miestilo.min.css'%}">
     <title>FarmaBarrio | Medicamentos</title>
 </head>
-
-{% extends "inicio.html" %}
-
-{% load static %}
-
-{% block header4 %}
-{% endblock %}
-
 {% block header1 %}
-
-
-
-
-    <link rel="stylesheet" href="{% static 'css/miestilo.min.css'%}">
     <body>
         <div class="b-line">
             <form action="/medicamentos/" method="POST"> {% csrf_token %}
@@ -43,32 +35,32 @@
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Guardar</button>
             </form>
         </div> 
-    <div class="v-line">
-        <form action="/buscar_medicamento/" method="GET"> 
-            <h1 class="h3 mb-3 fw-normal">Que medicamento desea buscar? </h1>
-            <div class="form-floating">
-                <input type="text" name="nombreMarca" class="form-control"  placeholder=" " >
-                    <label for="floatingInput">Nombre del medicamento</label>
+        <div class="v-line">
+            <form action="/buscar_medicamento/" method="GET"> 
+                <h1 class="h3 mb-3 fw-normal">Que medicamento desea buscar? </h1>
+                <div class="form-floating">
+                    <input type="text" name="nombreMarca" class="form-control"  placeholder=" " >
+                        <label for="floatingInput">Nombre del medicamento</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Buscar</button>
+            </form>
+            <div>
+                <br>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Buscar</button>
-        </form>
-        <div>
-            <br>
+            <div class='recuadro1'>
+                {% if medicamentos %}
+                <ul>
+                    {% for medicamento in medicamentos %}
+                    <li>{{ medicamento.nombreMarca }}</li>
+                    <li>{{ medicamento.drogaComponente }}</li>
+                    <li>{{ medicamento.laboratorio }}</li>
+                    <li>{{ medicamento.codigoBarra }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
         </div>
-        <div class='recuadro1'>
-            {% if medicamentos %}
-            <ul>
-                {% for medicamento in medicamentos %}
-                <li>{{ medicamento.nombreMarca }}</li>
-                <li>{{ medicamento.drogaComponente }}</li>
-                <li>{{ medicamento.laboratorio }}</li>
-                <li>{{ medicamento.codigoBarra }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
-    </div>
-{% endblock %}
     </body>
+{% endblock %}
 </html>
 

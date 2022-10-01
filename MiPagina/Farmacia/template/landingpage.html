@@ -1,12 +1,32 @@
-{% extends "inicio.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FarmaBarrio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="C:\Users\otero\Desktop\Pokio\Cursos\CoderHouse\Python (CoderHouse)\Desafios\VerdaderoFinal\MiPagina\Farmacia\static\css\miestilo.min.css">
+    <link rel="stylesheet" href="{% static 'css/miestilo.min.css'%}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <title>FarmaBarrio | Inicio</title>
 </head>
+<body>
+    <div class="header">
+        <header class="navbar navbar-dark bg-dark">
+            <a href="/inicio" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <svg class="bi me-2" width="20" height="32"><use xlink:href="#bootstrap"/></svg>
+                <span class="fs-4" style="color:green">FarmaBarrio</span>
+            </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a href="/signup" class="nav-link success" aria-current="page" style="margin:10px">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link success" aria-current="page" style="margin:10px">Iniciar Sesion</a>
+                </li>
+            </ul>
+        </header>
 
 {% block header2 %}
     <body>
@@ -14,8 +34,45 @@
     </body>
 
 {% endblock %}
-{% block header3 %}
-{% endblock %}
+
 {% block header1 %}
 {% endblock %}
+
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+        </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <li>
+                    <a href="#" class="social-icon-button twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a>
+                </li>
+            </li>
+            <li class="ms-3">
+                <li>
+                    <a href="#" class="social-icon-button facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a>
+                </li>
+            </li>
+            <li class="ms-3">                       
+                <li>
+                    <a href="#" class="social-icon-button gplus"><i class="fa fa-google-plus" aria-hidden="true"></i></i><span></span></a>
+                </li>
+            <li class="ms-3">                       
+                <li>
+                <li>
+                    <div>
+                        <a href="#" class="social-icon-button"><i class="fa fa-user" aria-hidden="true"></i></i><span></span></a>
+                    </div>
+                    <div>
+                        <h6>AboutUs</h6>
+                    </div>
+                </li>
+            </li>
+        </ul>
+    </footer>
+</div>
 </html>

@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block header1 %}
-
+<body>
     <center>
         <div class="titulo_laboratorios">
             <div>
@@ -24,27 +24,25 @@
                 </h1>
             </div>
         </div>
-    </center>
-
     <link rel="stylesheet" href="{% static 'css/miestilo.min.css'%}">
-            <div class="b-line">
-                <form action="/laboratorios/" method="POST"> {% csrf_token %}
-                    <h1 class="h3 mb-3 fw-normal">Que laboratorio desea agregar? </h1>
-                    <div class="form-floating">
-                        <input type="text" name="nombreLaboratorio" class="form-control"  placeholder=" " >
-                            <label for="floatingInput">Nombre del Laboratorio</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="text" name= "telefono"class="form-control" placeholder=" ">
-                            <label for="floatingPassword">Telefono</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="text" name= "direccion"class="form-control" placeholder=" ">
-                            <label for="floatingPassword">Direccion</label>
-                    </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Guardar</button>
-                </form>
-            </div> 
+        <div class="b-line">
+            <form action="/laboratorios/" method="POST"> {% csrf_token %}
+                <h1 class="h3 mb-3 fw-normal">Que laboratorio desea agregar? </h1>
+                <div class="form-floating">
+                    <input type="text" name="nombreLaboratorio" class="form-control"  placeholder=" " >
+                        <label for="floatingInput">Nombre del Laboratorio</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name= "direccion"class="form-control" placeholder=" ">
+                        <label for="floatingPassword">Direccion</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name= "telefono"class="form-control" placeholder=" ">
+                        <label for="floatingPassword">Telefono</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Guardar</button>
+            </form>
+        </div> 
         <div class="v-line">
             <form action="/laboratorios" method="GET"> 
                 <h1 class="h3 mb-3 fw-normal">Que laboratorio desea buscar? </h1>
@@ -55,7 +53,7 @@
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Buscar</button>
             </form>
         </div>
-        {% block content %}
+
         <div class='recuadro'>
             {% if medicamentos %}
             <ul>
@@ -68,6 +66,8 @@
             </ul>
             {% endif %}
         </div>
-        {% endblock %}
+    </center>
+    {% endblock %}
+</body>
 </html>
-{% endblock %}
+
