@@ -11,7 +11,9 @@
 {% extends "inicio.html" %}
 
 {% load static %}
- 
+{% block header4 %}
+{% endblock %}
+
 {% block header1 %}
 
     <center>
@@ -53,7 +55,7 @@
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Buscar</button>
             </form>
         </div>
-        {% endblock %}
+        {% block content %}
         <div class='recuadro'>
             {% if medicamentos %}
             <ul>
@@ -66,4 +68,6 @@
             </ul>
             {% endif %}
         </div>
+        {% endblock %}
 </html>
+{% endblock %}

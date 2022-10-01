@@ -15,5 +15,9 @@ urlpatterns = [
     path('signup/', signup),
     path('login/', login),
     path('logout/', LogoutView.as_view (template_name = "landingpage.html") , name = "Logout"),
+    path("perfil/editarperfil/", editarperfil),
+    path("perfil/changepass/", changePass),
+    path("perfil/", perfil),
+    path("perfil/changeavatar/", agregarAvatar),
 ]
 

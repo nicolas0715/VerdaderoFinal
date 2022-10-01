@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from MiPagina.view import *
 from Farmacia.views import *
-
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +32,12 @@ urlpatterns = [
     path("buscar_medicamento/", buscar_medicamento),
     path('signup/', signup),
     path('login/', login),
-    path("inicio/", inicio)
-    
+    path("inicio/", inicio),
+    path("perfil/editarperfil/", editarperfil),
+    path("perfil/changepass/", changePass),
+    path("perfil/", perfil),
+    path("perfil/changeavatar/", agregarAvatar),
+    path('logout/', LogoutView.as_view (template_name = "landingpage.html") , name = "Logout"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -16,8 +16,9 @@
     <form action="" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Registrarse</button>
+        <button type="submit" class="btn btn-success" style="margin-left:100px" style="margin-top:20px">Registrarse</button>
     </form>
+    <a href="/login" class="btn btn-success" aria-current="page" style="margin-left:65px" style="margin-top:20px">Ya tengo una cuenta</a>
 </body>
 {% endblock %}
 </html>

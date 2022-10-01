@@ -13,23 +13,29 @@
 </head>
 <body>
     <div class="header">
-
         <header class="navbar navbar-dark bg-dark">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <a href="/inicio" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                 <svg class="bi me-2" width="20" height="32"><use xlink:href="#bootstrap"/></svg>
                 <span class="fs-4" style="color:green">FarmaBarrio</span>
             </a>
             <ul class="nav nav-pills">
-
+                {% block header4 %}
                 <li class="nav-item">
                     <a href="/signup" class="nav-link success" aria-current="page" style="margin:10px">Registrarse</a>
                 </li>
                 <li class="nav-item">
                     <a href="/login" class="nav-link success" aria-current="page" style="margin:10px">Iniciar Sesion</a>
                 </li>
+                {% endblock %}
+                <li class="nav-item">
+                    <img src="{{ avatar }}" width="30px">
+                </li>
+                <li class="nav-item">
+                    <a href="/perfil" class="nav-link success" aria-current="page" style="margin:10px">{{ user.username }}</a>
+                </li>
                 {% block header3 %}
                 <li class="nav-item">
-                    <a href="/" class="nav-link success" aria-current="page" style="margin:10px">Salir</a>
+                    <a href="/logout" class="nav-link success" aria-current="page" style="margin:10px">Salir</a>
                 </li>
                 {% endblock %}
 
