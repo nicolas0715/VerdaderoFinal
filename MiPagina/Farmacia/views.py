@@ -254,3 +254,7 @@ def agregarAvatar(request):
 @login_required
 def aboutus(request):
     return render(request, "aboutus.html")
+
+
+def loadingTemplate(request):
+    return render (request, "loadingTemplate.html")

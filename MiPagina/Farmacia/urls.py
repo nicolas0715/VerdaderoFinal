@@ -20,5 +20,6 @@ urlpatterns = [
     path("perfil/", perfil),
     path("perfil/changeavatar/", agregarAvatar),
     path("aboutus/", aboutus),
+    path("loadingTemplate/", loadingTemplate),
 ]
 

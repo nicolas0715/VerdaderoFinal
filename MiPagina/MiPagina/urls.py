@@ -38,6 +38,7 @@ urlpatterns = [
     path("perfil/", perfil),
     path("perfil/changeavatar/", agregarAvatar),
     path("aboutus/", aboutus),
+    path("loadingTemplate/", loadingTemplate),
     path('logout/', LogoutView.as_view (template_name = "landingpage.html") , name = "Logout"),
 ]
 
