@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="C:\Users\otero\Desktop\Pokio\Cursos\CoderHouse\Python (CoderHouse)\Desafios\VerdaderoFinal\MiPagina\Farmacia\static\css\miestilo.min.css">
     <link rel="stylesheet" href="{% static 'css/miestilo.min.css'%}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    {% block titulo %}
     <title>FarmaBarrio | Inicio</title>
+    {% endblock %}
 </head>
 <body>
     <div class="header">
@@ -19,7 +21,7 @@
                 <span class="fs-4" style="color:green">FarmaBarrio</span>
             </a>
             <ul class="nav nav-pills">
-                <li class="nav-item">
+                <li class="nav-item" style="margin:5px">
                     <img src="{{ avatar }}" width="30px">
                 </li>
                 <li class="nav-item">
@@ -94,7 +96,7 @@
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
                     <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
                 </a>
-                <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+                <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Farmabarrio, Inc</span>
             </div>
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
                 <li class="ms-3">
@@ -115,7 +117,7 @@
                     <li>
                     <li>
                         <div>
-                            <a href="#" class="social-icon-button"><i class="fa fa-user" aria-hidden="true"></i></i><span></span></a>
+                            <a href="/aboutus" class="social-icon-button"><i class="fa fa-user" aria-hidden="true"></i></i><span></span></a>
                         </div>
                         <div>
                             <h6>AboutUs</h6>

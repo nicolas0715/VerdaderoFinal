@@ -41,12 +41,12 @@ def laboratorios(request):
     except:
         avatar = None
     if request.method == "POST":
-        medic = Laboratorio(
-            nombreLab= request.POST["nombreLaboratorio"],
-            direccion= request.POST["direccion"], 
-            telefonoLab= request.POST["telefono"],  
+        lab = Laboratorio(
+            nombrelab= request.POST["nombreLab"],
+            direccionlab= request.POST["direccionLab"], 
+            telefonolab= request.POST["telefonoLab"],  
             )
-        medic.save()
+        lab.save()
         return render(request, "laboratorios.html", {"avatar": avatar})
     return render(request, "laboratorios.html", {"avatar": avatar}) 
 
@@ -58,14 +58,14 @@ def sucursales(request):
     except:
         avatar = None
     if request.method == "POST":
-        medic = Medicamento(
+        sucursal = Sucursal(
             nombreSucursal = request.POST["nombreSucursal"],
             direccionSucursal = request.POST["direccionSucursal"], 
             municipioSucursal = request.POST["municipioSucursal"],  
             ciudadSucursal = request.POST["ciudadSucursal"],
             telefonoSucursal = request.POST["telefonoSucursal"],
             )
-        medic.save()
+        sucursal.save()
         avatar = Avatar.objects.filter(user = request.user.id)
         try:
             avatar = avatar[0].image.url
@@ -151,25 +151,23 @@ def login(request):
             else:
                 return render(request, "login.html", {"form": form})
         else:
-            return render(request, "signup.html", {"form": form})
+            return render(request, "login.html", {"form": form})
     form = AuthenticationForm()
     return render(request, "login.html", {"form": form})
 
 
 def signup(request):
     if request.method == "POST":
-#       form = UserCreationForm(request.POST)
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data["username"]
+#           username = form.cleaned_data["username"]
             form.save()
             avatar = Avatar.objects.filter(user = request.user.id)
             try:
                 avatar = avatar[0].image.url
             except:
                 avatar = None
-            return render(request, "inicio.html", {"avatar": avatar})
-#   form = UserCreationForm()
+            return render(request, "login.html", {"avatar": avatar})
     form = UserRegisterForm()
     return render(request, "signup.html", {"form": form})
 
@@ -252,3 +250,7 @@ def agregarAvatar(request):
             avatar.save()
             return render(request, "perfil.html", {"avatar": avatar})
     return render(request, "agregarAvatar.html", {"avatar": avatar, "form": form})
+
+@login_required
+def aboutus(request):
+    return render(request, "aboutus.html")
