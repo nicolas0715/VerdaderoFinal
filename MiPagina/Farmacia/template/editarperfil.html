@@ -1,17 +1,18 @@
 {% extends "inicio.html" %}
 
 {% block header1 %}
+<center>
+    <div>
+        <h1>Editar Perfil</h1><br>
+    </div>
+    <h3>Usuario: {{ usuario }}</h3>
 
-<div>
-    <h1>Editar Perfil</h1>
-</div>
-<h3>Usuario: {{ usuario }}</h3>
-
-<form method="POST"> {% csrf_token %}
-    <table style="margin:10px">
-        {{ form.as_table }}
-    </table>
-    <input class="btn btn-success" type="submit" value="Aceptar Cambios">
-</form>
-<a class="btn btn-success" href="/perfil/changepass/" >Cambiar Contraseña</a>
+    <form method="POST"> {% csrf_token %}
+        <table style="margin:15px">
+            {{ form.as_table }}
+        </table>
+        <input class="btn btn-success" type="submit" value="Aceptar Cambios">
+        <a class="btn btn-success" href="/perfil/changepass/" >Cambiar Contraseña</a>
+    </form>
+</center>
 {% endblock %}

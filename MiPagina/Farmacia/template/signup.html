@@ -1,10 +1,15 @@
 {% extends "landingpage.html" %}
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/miestilo.min.css'%}">
+    <link rel="stylesheet" href="C:\Users\otero\Desktop\Pokio\Cursos\CoderHouse\Python (CoderHouse)\Desafios\VerdaderoFinal\MiPagina\Farmacia\static\css\miestilo.min.css">
+
     <title>Registrarse</title>
 </head>
 {% block header2 %}
@@ -13,11 +18,15 @@
 {% endblock %}
 {% block header1 %}
 <body>
-    <form action="" method="POST"> {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success" style="margin-left:100px" style="margin-top:20px">Registrarse</button>
-    </form>
-    <a href="/login" class="btn btn-success" aria-current="page" style="margin-left:65px" style="margin-top:20px">Ya tengo una cuenta</a>
+    <div style="text-align:center">
+        <br><br><br>
+        <h2>Ingresa tus datos para registrarse</h2>
+        <form style="text-align:center" action="" method="POST"> {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success" style="margin-left:50px" style="margin-top:20px">Registrarse</button>
+            <a href="/login" class="btn btn-success" aria-current="page" style="margin-left:30px" style="margin-top:20px">Ya tengo una cuenta</a>
+        </form>
+    </div>
 </body>
 {% endblock %}
 </html>

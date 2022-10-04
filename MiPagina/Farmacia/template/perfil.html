@@ -4,8 +4,12 @@
 
 <link rel="stylesheet" href=" C:\Users\otero\Desktop\Pokio\Cursos\CoderHouse\Python (CoderHouse)\Desafios\VerdaderoFinal\MiPagina\Farmacia\static\css\miestilo.min.css" %}>
 {% block header1 %}
-    <h1>Perfil</h1>
-    <div style="position: relative; top:20px">
+<center>
+    <div>
+        <h1>Perfil</h1>
+        <img src="{{ request.user }}" width="30px">
+    </div>
+    <div style="position: relative; top:20px;">
         <ul>
             <li>Nombre: {{ user.username }}</li>
             <li>Email: {{ user.email }}</li>
@@ -15,4 +19,5 @@
         <a class="btn btn-success" style="text-decoration:none; color: white" href="editarperfil/" >Editar Usuario</a>
         <a class="btn btn-success" style="text-decoration:none; color: white" href="changeavatar/" >Cambiar Avatar</a>
     </div>
+</center>
 {% endblock %}

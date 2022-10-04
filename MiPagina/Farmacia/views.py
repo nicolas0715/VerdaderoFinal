@@ -130,12 +130,16 @@ def ofertas(request):
 
 
 def login(request):
-    if request.method =="POST":
+
+    if request.method == "POST":
         form = AuthenticationForm(request, data = request.POST)
+
         if form.is_valid():
             user = form.cleaned_data.get("username")
             pdw = form.cleaned_data.get("password")
+            
             user = authenticate(username = user, password = pdw)
+
             if user is not None:
                 login1(request, user)
                 avatar = Avatar.objects.filter(user = request.user.id)
@@ -147,7 +151,7 @@ def login(request):
             else:
                 return render(request, "login.html", {"form": form})
         else:
-            return render(request, "login.html", {"form": form})
+            return render(request, "signup.html", {"form": form})
     form = AuthenticationForm()
     return render(request, "login.html", {"form": form})
 
