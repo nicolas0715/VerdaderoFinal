@@ -1,9 +1,25 @@
-<h1>Cambiar Contraseña</h1>
-<h1>{{ usuario }}</h1>
+{% extends "inicio.html" %}
 
+{% block header4 %}
+{% endblock %}
+
+{% block header3 %}
+{% endblock %}
+
+{% block header5 %}
+
+
+<center>
+    <h1>Cambiar Contraseña</h1>
+    <h1>{{ usuario }}</h1>
+</center>
+<center>
 <form action="" method="POST" > {% csrf_token %}
     <table>
         {{ form.as_table }}
     </table>
-    <input type="submit" value="Aceptar">
+    <input type="submit" value="Aceptar" class="btn btn-outline-success">
 </form>
+</center>
+
+{% endblock %}

@@ -191,3 +191,23 @@
     background: #fefefe;
     border-color: #000000;
 }
+
+
+
+
+.contenedorHtmls{
+    width:100%;
+    text-align: center;
+}
+
+.contenedorLeft{
+    display: inline-block;;
+}
+
+.contenedorRight{
+    display: inline-block;
+}
+
+.contenedorCenter{
+    display: inline-block;
+}

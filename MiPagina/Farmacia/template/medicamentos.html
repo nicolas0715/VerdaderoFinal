@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="{% static 'css/miestilo.min.css'%}">
     <title>FarmaBarrio | Medicamentos</title>
 </head>
+{% block header5 %}
+{% endblock %}
 {% block header1 %}
+
     <body>
         <div class="b-line">
             <form action="/medicamentos/" method="POST"> {% csrf_token %}
