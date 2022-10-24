@@ -30,6 +30,7 @@ urlpatterns = [
     path("ofertas/", ofertas),
 #   path("api_medicamento/", api_medicamento),
     path("buscar_medicamento/", buscar_medicamento),
+    path('buscar_laboratorio/', buscar_laboratorio),
     path('signup/', signup),
     path('login/', login),
     path("inicio/", inicio),

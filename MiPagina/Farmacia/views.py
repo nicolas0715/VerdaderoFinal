@@ -42,9 +42,9 @@ def laboratorios(request):
         avatar = None
     if request.method == "POST":
         lab = Laboratorio(
-            nombrelab= request.POST["nombreLab"],
-            direccionlab= request.POST["direccionLab"], 
-            telefonolab= request.POST["telefonoLab"],  
+            nombreLab= request.POST["nombreLab"],
+            direccionLab= request.POST["direccionLab"], 
+            telefonoLab= request.POST["telefonoLab"],  
             )
         lab.save()
         return render(request, "laboratorios.html", {"avatar": avatar})
@@ -93,10 +93,30 @@ def sucursales(request):
 
 @login_required
 def buscar_medicamento(request):
+    avatar = Avatar.objects.filter(user = request.user.id)
+    try:
+        avatar = avatar[0].image.url
+    except:
+        avatar = None
     if request.GET["nombreMarca"]:
         nombre = request.GET["nombreMarca"]
         medicamentos= Medicamento.objects.filter(nombreMarca__icontains = nombre )
         return render(request, "medicamentos.html", {"medicamentos": medicamentos})
+    avatar = Avatar.objects.filter(user = request.user.id)
+    try:
+        avatar = avatar[0].image.url
+    except:
+        avatar = None
+    else:
+        respuesta= "No enviaste datos"
+    return HttpResponse(respuesta)
+
+@login_required
+def buscar_laboratorio(request):
+    if request.GET["nombreLab"]:
+        nombre = request.GET["nombreLab"]
+        laboratorio = Laboratorio.objects.filter(nombreLab__icontains = nombre )
+        return render(request, "laboratorios.html", {"laboratorio": laboratorio})
     else:
         respuesta= "No enviaste datos"
     return HttpResponse(respuesta)

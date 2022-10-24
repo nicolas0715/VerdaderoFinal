@@ -7,7 +7,7 @@ class Medicamento(models.Model):
     nombreMarca = models.CharField(max_length=30)
     drogaComponente = models.CharField(max_length=30)
     laboratorio = models.CharField(max_length=30)
-    codigoBarra = models.IntegerField()
+    codigoBarra = models.IntegerField() 
 
 class Laboratorio(models.Model):
     nombreLab = models.CharField(max_length=30)
